@@ -27,14 +27,13 @@
                        <th scope="col">Address</th>
                        <th scope="col">Zip</th>
                        <th scope="col">State</th>
-
                    </tr>
                </thead>
            <tbody>
                {% for dealer in dealerships%}
                    <tr>
                        <td style="padding: 2%;">{{dealer.id}}</td>
-                       <td style="padding: 2%;">{{dealer.short_name}}</td>
+                       <td style="padding: 2%;"><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>
                        <td style="padding: 2%;">{{dealer.city}}</td>
                        <td style="padding: 2%;">{{dealer.address}}</td>
                        <td style="padding: 2%;">{{dealer.zip}}</td>
