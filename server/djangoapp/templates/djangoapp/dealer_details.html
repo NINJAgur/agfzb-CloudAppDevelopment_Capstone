@@ -16,13 +16,13 @@
         <body>
         {% include 'navbar.html' %}
         <section class="container" style="padding: 3%;">
-            <div class="card-columns" style="column-count:2">
+            <div class="card-columns">
                 {% for review in reviews %}
                     <div class="card">
+                        <img src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" class="card-img-center" style="height: 100px; width: 100px; margin-left: 35%; margin-bottom: 5%; margin-top: 2%;">
                         <div class="card-body" style="text-align: center; height:300px">
                             <h5 class="card-title">{{ review.car_make }}, {{ review.car_model }}</h5>
                             <h5 class="card-title">{{ review.car_year }}</h5>
-                            <h5 class="card-title">{{review.sentiment}}</h5>
                             <p class="card-text">{{ review.review }}</p>
                         </div>
                     </div>
